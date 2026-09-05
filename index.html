@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VELQOSS | Premium Printing, Designing & Digital Services</title>
+  <meta name="description" content="VELQOSS offers premium printing, graphic design, personalized gifting, and digital services tailored for businesses and individual clients.">
+  <meta property="og:title" content="VELQOSS - Virtual Excellence Quality Opportunity Success Service">
+  <meta property="og:description" content="PRINT • DESIGN • DIGITAL - Premium customized services for your brand.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="container nav-wrapper">
+      <a href="#" class="brand-logo">VELQOSS</a>
+      
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#categories">Categories</a></li>
+        <li><a href="#catalogue">Products</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="btn-primary" onclick="openGeneralWhatsApp()">WhatsApp Us</button>
+        <button class="hamburger" id="hamburger">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero" id="home">
+    <div class="container hero-grid">
+      <div>
+        <span class="hero-tag">PRINT • DESIGN • DIGITAL</span>
+        <h1 class="hero-title">Everything You Need, Designed For You.</h1>
+        <p class="hero-desc">Your trusted partner for customized printing, graphic design, corporate gifting, and modern digital services. High-precision production delivered straight to your doorstep.</p>
+        <div class="hero-ctas">
+          <a href="#catalogue" class="btn-primary">Explore Products</a>
+          <a href="#custom-quote" class="btn-secondary">Get Custom Quote</a>
+        </div>
+      </div>
+      <div class="hero-preview-card">
+        <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=800&q=80" alt="VELQOSS Product Showcase">
+      </div>
+    </div>
+  </section>
+
+  <section class="trust-bar">
+    <div class="container trust-grid">
+      <div class="trust-item">
+        <h4>100+ Products</h4>
+        <p>Extensive customized range</p>
+      </div>
+      <div class="trust-item">
+        <h4>Custom Designs</h4>
+        <p>Tailored brand graphics</p>
+      </div>
+      <div class="trust-item">
+        <h4>Quality Service</h4>
+        <p>Premium finish & precision</p>
+      </div>
+      <div class="trust-item">
+        <h4>Easy WhatsApp Ordering</h4>
+        <p>Instant support & updates</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding" id="categories">
+    <div class="container">
+      <div class="section-header">
+        <h2>Shop By Category</h2>
+        <p>Select a category to browse customized products instantly</p>
+      </div>
+      <div class="category-grid">
+        <div class="category-card" onclick="selectCategory('cards')">
+          <div class="category-icon">💳</div>
+          <h3>Cards</h3>
+        </div>
+        <div class="category-card" onclick="selectCategory('pvc')">
+          <div class="category-icon">🪪</div>
+          <h3>ID / PVC</h3>
+        </div>
+        <div class="category-card" onclick="selectCategory('invitation')">
+          <div class="category-icon">✉️</div>
+          <h3>Invitations</h3>
+        </div>
+        <div class="category-card" onclick="selectCategory('business')">
+          <div class="category-icon">💼</div>
+          <h3>Business</h3>
+        </div>
+        <div class="category-card" onclick="selectCategory('gifts')">
+          <div class="category-icon">🎁</div>
+          <h3>Gifts</h3>
+        </div>
+        <div class="category-card" onclick="selectCategory('design')">
+          <div class="category-icon">🎨</div>
+          <h3>Design</h3>
+        </div>
+        <div class="category-card" onclick="selectCategory('digital')">
+          <div class="category-icon">💻</div>
+          <h3>Digital Services</h3>
+        </div>
+        <div class="category-card" onclick="selectCategory('printing')">
+          <div class="category-icon">🖨️</div>
+          <h3>Printing</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding" style="background: rgba(255,255,255,0.01);">
+    <div class="container">
+      <div class="section-header">
+        <h2>Featured Products</h2>
+        <p>Our most popular customized offerings</p>
+      </div>
+      <div class="product-grid" id="featured-grid"></div>
+      <div style="text-align: center; margin-top: 36px;">
+        <a href="#catalogue" class="btn-secondary">View All Products</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding" id="catalogue">
+    <div class="container">
+      <div class="section-header">
+        <h2>Complete Product Catalogue</h2>
+        <p>Search and filter through our full lineup</p>
+      </div>
+
+      <div class="products-controls">
+        <input type="text" id="catalogue-search" class="search-input" placeholder="Search any product..." oninput="filterCatalogue()">
+        <div class="category-filters">
+          <button class="filter-btn active" data-cat="all">All</button>
+          <button class="filter-btn" data-cat="cards">Cards</button>
+          <button class="filter-btn" data-cat="pvc">ID / PVC</button>
+          <button class="filter-btn" data-cat="invitation">Invitation</button>
+          <button class="filter-btn" data-cat="business">Business</button>
+          <button class="filter-btn" data-cat="gifts">Gifts</button>
+          <button class="filter-btn" data-cat="design">Design</button>
+          <button class="filter-btn" data-cat="digital">Digital</button>
+          <button class="filter-btn" data-cat="printing">Printing</button>
+        </div>
+      </div>
+
+      <div class="product-grid" id="catalogue-grid"></div>
+      <div id="catalogue-empty" style="display: none; text-align: center; padding: 40px; color: var(--text-muted);">
+        No matching products found. Try typing a different keyword or custom order below.
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding" id="custom-quote" style="background: var(--bg-card);">
+    <div class="container">
+      <div class="custom-order-box">
+        <div class="section-header" style="margin-bottom: 24px;">
+          <h2>Can't Find What You Need?</h2>
+          <p>Submit your specific custom details for an instant quotation</p>
+        </div>
+        <form onsubmit="handleCustomQuoteSubmit(event)">
+          <div class="form-group">
+            <label>Your Name</label>
+            <input type="text" id="cq-name" class="form-control" placeholder="Enter your full name" required>
+          </div>
+          <div class="form-group">
+            <label>WhatsApp / Phone Number</label>
+            <input type="tel" id="cq-phone" class="form-control" placeholder="Enter your contact number" required>
+          </div>
+          <div class="form-group">
+            <label>Describe Your Custom Requirement</label>
+            <textarea id="cq-req" class="form-control" rows="4" placeholder="Mention size, material, quantity, or special printing needs..." required></textarea>
+          </div>
+          <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 16px;">* You can attach design photos/reference images directly in the WhatsApp chat window after submitting.</p>
+          <button type="submit" class="btn-primary" style="width: 100%;">Get Custom Quote on WhatsApp</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding" id="services">
+    <div class="container">
+      <div class="section-header">
+        <h2>Our Core Services</h2>
+        <p>Comprehensive solutions engineered for individual and commercial needs</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <h3>Printing Services</h3>
+          <p>High-resolution offset, digital, flex, and specialty surface printing.</p>
+          <button class="btn-secondary" onclick="openGeneralWhatsApp()">Inquire Printing</button>
+        </div>
+        <div class="service-card">
+          <h3>Graphic Design</h3>
+          <p>Brand logo design, vector art, social media graphics, and marketing assets.</p>
+          <button class="btn-secondary" onclick="openGeneralWhatsApp()">Inquire Design</button>
+        </div>
+        <div class="service-card">
+          <h3>Custom Products</h3>
+          <p>Personalized corporate kits, mugs, calendars, keychains, and laser items.</p>
+          <button class="btn-secondary" onclick="openGeneralWhatsApp()">Inquire Products</button>
+        </div>
+        <div class="service-card">
+          <h3>Digital Services</h3>
+          <p>Social media branding, web elements, and electronic invitations.</p>
+          <button class="btn-secondary" onclick="openGeneralWhatsApp()">Inquire Digital</button>
+        </div>
+        <div class="service-card">
+          <h3>Business Solutions</h3>
+          <p>Complete start-up print kits, ID card systems, and store collateral.</p>
+          <button class="btn-secondary" onclick="openGeneralWhatsApp()">Inquire Solutions</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding" style="background: rgba(255,255,255,0.01);">
+    <div class="container">
+      <div class="section-header">
+        <h2>How It Works</h2>
+        <p>Simple 4-step process from concept to delivery</p>
+      </div>
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-num">01</div>
+          <h3>Choose Product</h3>
+          <p>Select from our product catalog or propose a custom order.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">02</div>
+          <h3>Share Details</h3>
+          <p>Provide specifications, logos, artwork, or text requirements.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">03</div>
+          <h3>Confirm Order</h3>
+          <p>Approve digital preview proof and finalize payment details.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">04</div>
+          <h3>Receive / Collect</h3>
+          <p>Get your finished custom order delivered or pick up in-store.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding" id="gallery">
+    <div class="container">
+      <div class="section-header">
+        <h2>Our Portfolio & Work</h2>
+        <p>A showcase of recent custom printing and design projects</p>
+      </div>
+      <div class="product-grid" id="gallery-grid"></div>
+    </div>
+  </section>
+
+  <section class="section-padding" style="background: var(--bg-card);">
+    <div class="container">
+      <div class="section-header">
+        <h2>Why Choose VELQOSS</h2>
+        <p>Built around reliability, craftsmanship, and customer satisfaction</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <h3 class="text-gold">Quality Focus</h3>
+          <p>Strict quality control across paper GSM, color accuracy, and materials.</p>
+        </div>
+        <div class="service-card">
+          <h3 class="text-gold">Custom Design</h3>
+          <p>Dedicated design tweaks to ensure your brand stands out effortlessly.</p>
+        </div>
+        <div class="service-card">
+          <h3 class="text-gold">Multiple Products</h3>
+          <p>Single platform for printing, identity cards, gifts, and graphics.</p>
+        </div>
+        <div class="service-card">
+          <h3 class="text-gold">Easy Ordering</h3>
+          <p>No complicated sign-ups. Order directly through quick WhatsApp chat.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding" id="about">
+    <div class="container">
+      <div class="section-header">
+        <h2>About VELQOSS</h2>
+        <p>Delivering high-precision print and digital execution</p>
+      </div>
+      <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+        <p style="color: var(--text-muted); font-size: 1.05rem;">
+          VELQOSS is a premier dedicated provider of customized printing, graphic design, personalized gifting, and modern digital services. Built on attention to detail and modern aesthetics, we translate client ideas into crisp physical and digital assets.
+        </p>
+        <div class="acronym-grid">
+          <div class="acronym-card"><span>V</span>Virtual Excellence</div>
+          <div class="acronym-card"><span>Q</span>Quality</div>
+          <div class="acronym-card"><span>O</span>Opportunity</div>
+          <div class="acronym-card"><span>S</span>Success</div>
+          <div class="acronym-card"><span>S</span>Service</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding" id="contact" style="background: rgba(255,255,255,0.01);">
+    <div class="container">
+      <div class="section-header">
+        <h2>Get In Touch</h2>
+        <p>Reach out directly for orders, pricing inquiries, or location directions</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <h3>📱 WhatsApp</h3>
+          <p class="val-phone">+91 98765 43210</p>
+          <button class="btn-primary" onclick="openGeneralWhatsApp()">Chat Now</button>
+        </div>
+        <div class="service-card">
+          <h3>✉️ Email Us</h3>
+          <p class="val-email">contact@velqoss.com</p>
+        </div>
+        <div class="service-card">
+          <h3>📸 Instagram</h3>
+          <p class="val-insta">@velqoss_official</p>
+        </div>
+        <div class="service-card">
+          <h3>📍 Location & Hours</h3>
+          <p class="val-location">Main Market Road</p>
+          <p class="val-hours" style="font-size: 0.8rem; margin-top: 6px;">Mon-Sat</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding" style="text-align: center; background: var(--gold-gradient); color: var(--text-dark);">
+    <div class="container">
+      <h2 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 12px;">Ready to Create Something Amazing?</h2>
+      <p style="font-weight: 600; margin-bottom: 24px;">Transform your brand identity and custom printing requirements today.</p>
+      <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+        <a href="#catalogue" class="btn-secondary" style="background: var(--text-dark); color: var(--text-main); border: none;">Explore Products</a>
+        <button class="btn-primary" onclick="openGeneralWhatsApp()" style="background: #ffffff; color: var(--text-dark);">Start Your Order</button>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h3 class="brand-logo" style="margin-bottom: 12px;">VELQOSS</h3>
+          <p style="color: var(--text-muted); font-size: 0.9rem;">PRINT • DESIGN • DIGITAL</p>
+          <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 8px;">Virtual Excellence • Quality • Opportunity • Success • Service</p>
+        </div>
+        <div>
+          <h4 style="margin-bottom: 12px;">Quick Links</h4>
+          <p><a href="#home">Home</a></p>
+          <p><a href="#catalogue">Products</a></p>
+          <p><a href="#services">Services</a></p>
+          <p><a href="#gallery">Gallery</a></p>
+        </div>
+        <div>
+          <h4 style="margin-bottom: 12px;">Company</h4>
+          <p><a href="#about">About VELQOSS</a></p>
+          <p><a href="#custom-quote">Custom Quote</a></p>
+          <p><a href="#contact">Contact Support</a></p>
+        </div>
+        <div>
+          <h4 style="margin-bottom: 12px;">Contact</h4>
+          <p class="val-phone">+91 98765 43210</p>
+          <p class="val-email">contact@velqoss.com</p>
+          <p class="val-location">Main Market Road</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 VELQOSS. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="modal-overlay" id="product-modal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal()">×</button>
+      <div id="modal-body-content"></div>
+    </div>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="products.js"></script>
+  <script src="gallery.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
